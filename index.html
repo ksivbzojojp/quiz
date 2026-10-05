@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#6257e8" />
+    <title>QuizUp — teste seus conhecimentos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema"><i class="fa-solid fa-moon"></i></button>
+    <main class="app-shell">
+      <section class="screen start-screen" id="startScreen">
+        <div class="brand"><span class="brand-icon"><i class="fa-solid fa-bolt"></i></span><span>quiz<span>up</span></span></div>
+        <div class="hero-copy"><span class="eyebrow">Desafie sua mente</span><h1>Quanto você<br /><em>realmente</em> sabe?</h1><p>Escolha um tema, responda no seu ritmo e descubra até onde vai o seu conhecimento.</p></div>
+        <div class="category-area"><div class="section-title"><h2>Escolha uma categoria</h2><span id="bestScoreLabel">Seu recorde: 0 pontos</span></div><div class="category-grid" id="categoryGrid"></div><button class="primary-button start-button" id="startButton" type="button"><span>Começar desafio</span><i class="fa-solid fa-arrow-right"></i></button></div>
+        <div class="quick-stats"><div><strong id="totalQuestions">0</strong><span>perguntas disponíveis</span></div><div><strong>20s</strong><span>por pergunta</span></div><div><strong>100%</strong><span>feito para aprender</span></div></div>
+      </section>
+
+      <section class="screen quiz-screen hidden" id="quizScreen">
+        <header class="quiz-top"><button class="back-button" id="quitButton" type="button"><i class="fa-solid fa-arrow-left"></i> Sair</button><div class="quiz-brand"><span class="brand-icon small"><i class="fa-solid fa-bolt"></i></span> quizup</div><div class="score-pill"><i class="fa-solid fa-star"></i> <span id="liveScore">0</span></div></header>
+        <div class="progress-row"><span id="progressText">Pergunta 1 de 5</span><span id="categoryLabel">Tecnologia</span></div><div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+        <div class="question-meta"><span class="question-number" id="questionNumber">01</span><div class="timer-wrap"><i class="fa-regular fa-clock"></i><span id="timer">20</span>s</div></div>
+        <h2 class="question-title" id="questionText">Pergunta</h2><div class="answers" id="answers"></div>
+        <div class="quiz-footer"><span id="hintText"><i class="fa-solid fa-lightbulb"></i> Escolha uma alternativa</span><button class="next-button hidden" id="nextButton" type="button">Próxima <i class="fa-solid fa-arrow-right"></i></button></div>
+      </section>
+
+      <section class="screen result-screen hidden" id="resultScreen">
+        <div class="result-badge"><i class="fa-solid fa-trophy"></i></div><span class="eyebrow">Desafio concluído</span><h1 id="resultTitle">Mandou bem!</h1><p id="resultMessage">Você terminou o quiz.</p><div class="result-score"><strong id="finalScore">0</strong><span>pontos</span></div><div class="result-stats"><div><strong id="correctCount">0</strong><span>Acertos</span></div><div><strong id="accuracy">0%</strong><span>Aproveitamento</span></div><div><strong id="bestScore">0</strong><span>Recorde</span></div></div><div class="result-actions"><button class="primary-button" id="retryButton" type="button"><i class="fa-solid fa-rotate-right"></i> Jogar novamente</button><button class="secondary-button" id="homeButton" type="button">Escolher outra categoria</button></div></section>
+    </main>
+    <div class="toast" id="toast"><i class="fa-solid fa-circle-check"></i><span></span></div>
+    <script src="script.js"></script>
+  </body>
+</html>
